@@ -70,7 +70,7 @@
 
 
 
-3. IP balanser:
+3. site: http://158.160.165.86/
 
 ![IP balanser](image-2.png)
 
@@ -78,6 +78,8 @@
 Создайте ВМ, разверните на ней Zabbix. На каждую ВМ установите Zabbix Agent, настройте агенты на отправление метрик в Zabbix. 
 
 Настройте дешборды с отображением метрик, минимальный набор — по принципу USE (Utilization, Saturation, Errors) для CPU, RAM, диски, сеть, http запросов к веб-серверам. Добавьте необходимые tresholds на соответствующие графики.
+
+site: http://158.160.96.136/zabbix/
 
 ### Решение:
 
@@ -110,6 +112,7 @@ Cоздайте ВМ, разверните на ней Elasticsearch. Устан
 4. Настроил индекс логов nginx и вывод в Dicsover:
 ![kibana](image-5.png)
 
+site: http://89.169.154.252:5601/app/home#/
 
 ### Сеть
 Разверните один VPC. Сервера web, Elasticsearch поместите в приватные подсети. Сервера Zabbix, Kibana, application load balancer определите в публичную подсеть.
