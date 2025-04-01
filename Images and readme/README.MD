@@ -34,7 +34,7 @@
 
 ### Решение:
 
-1. Создал 6 виртуальных машин c помощью [Terraform](/home/artem/netology/sys-diplom1/my-diplom-sys/vms.tf):
+1. Создал 6 виртуальных машин c помощью [Terraform](../vms.tf):
 
 ![vm](image.png)
 
@@ -61,8 +61,8 @@
 
 ### Решение:
 
-1. Установил на машины nginx-1 nginx-2 - ngnix с помощью [playbook.-nginx.yml](/home/artem/netology/sys-diplom1/my-diplom-sys/playbook.-nginx.yml)
-1. Создал Target Group Backend Group HTTP router Application load balancer в [vms.tf](/home/artem/netology/sys-diplom1/my-diplom-sys/vms.tf)
+1. Установил на машины nginx-1 nginx-2 - ngnix с помощью [playbook.-nginx.yml](../playbook.-nginx.yml)
+1. Создал Target Group Backend Group HTTP router Application load balancer в [vms.tf](../vms.tf)
 2. Протестируйте сайт
 `curl -v <публичный IP балансера>:80`
 
@@ -81,8 +81,8 @@
 
 ### Решение:
 
-1. Установил Zabbix с помощью [playbook-zabbix_server.yml](/home/artem/netology/sys-diplom1/my-diplom-sys/playbook-zabbix_server.yml) и роли [Zabbix](../zabbix)
-2. Настроил агенты на двух веб серверах с nginx спомощью [playbook-zbx-agent.yml](/home/artem/netology/sys-diplom1/my-diplom-sys/playbook-zbx-agent.yml)
+1. Установил Zabbix с помощью [playbook-zabbix_server.yml](../playbook-zabbix_server.yml) и роли [Zabbix](../zabbix)
+2. Настроил агенты на двух веб серверах с nginx спомощью [playbook-zbx-agent.yml](playbook-zbx-agent.yml)
 3. Настроил заббикс и dashboards на получение необходимых метрик:
 ![status zabbux](image-10.png)
 ![hosts](image-11.png)
