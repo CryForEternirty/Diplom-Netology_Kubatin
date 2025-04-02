@@ -79,9 +79,9 @@
 
 Настройте дешборды с отображением метрик, минимальный набор — по принципу USE (Utilization, Saturation, Errors) для CPU, RAM, диски, сеть, http запросов к веб-серверам. Добавьте необходимые tresholds на соответствующие графики.
 
-site: http://158.160.96.136/zabbix/
-
 ### Решение:
+
+site: http://158.160.96.136/zabbix/
 
 1. Установил Zabbix с помощью [playbook-zabbix_server.yml](../playbook-zabbix_server.yml) и роли [Zabbix](../zabbix)
 2. Настроил агенты на двух веб серверах с nginx спомощью [playbook-zbx-agent.yml](playbook-zbx-agent.yml)
@@ -89,7 +89,9 @@ site: http://158.160.96.136/zabbix/
 ![status zabbux](image-10.png)
 ![hosts](image-11.png)
 ![dashboard](image-3.png)
-![dashboard2](image-4.png)
+![dashWEB1](image-15.png)
+![dash2](image-4.png)
+![dashWEB2](image-16.png)
 
 ### Логи
 Cоздайте ВМ, разверните на ней Elasticsearch. Установите filebeat в ВМ к веб-серверам, настройте на отправку access.log, error.log nginx в Elasticsearch.
