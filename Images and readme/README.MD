@@ -90,7 +90,7 @@ site: http://158.160.96.136/zabbix/
 ![hosts](image-11.png)
 ![dashboard](image-3.png)
 ![dashWEB1](image-15.png)
-![dash2](image-4.png)
+![dash2](image-17.png)
 ![dashWEB2](image-16.png)
 
 ### Логи
