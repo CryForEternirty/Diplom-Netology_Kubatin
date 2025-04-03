@@ -77,7 +77,7 @@
 
 ### Решение:
 
-site: http://158.160.96.136/zabbix/
+site: http://158.160.45.51/zabbix/
 
 1. Установил Zabbix с помощью [playbook-zabbix_server.yml](../playbook-zabbix_server.yml) и роли [Zabbix](../zabbix)
 2. Настроил агенты на двух веб серверах с nginx спомощью [playbook-zbx-agent.yml](playbook-zbx-agent.yml)
@@ -110,7 +110,7 @@ Cоздайте ВМ, разверните на ней Elasticsearch. Устан
 4. Настроил индекс логов nginx и вывод в Dicsover:
 ![kibana](image-5.png)
 
-site: http://158.160.101.122:5601/app/home#/
+site: http://158.160.46.133:5601/app/home#/
 
 ### Сеть
 Разверните один VPC. Сервера web, Elasticsearch поместите в приватные подсети. Сервера Zabbix, Kibana, application load balancer определите в публичную подсеть.

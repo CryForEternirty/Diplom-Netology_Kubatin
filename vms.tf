@@ -8,11 +8,12 @@ resource "yandex_compute_instance" "bastion" {
   hostname    = "bastion"
   platform_id = "standard-v1"
   zone        = "ru-central1-a"
+  allow_stopping_for_update = true
 
   resources {
     cores         = 2
-    memory        = 2
-    core_fraction = 20
+    memory        = 1
+    core_fraction = 5
   }
 
   boot_disk {
@@ -118,7 +119,8 @@ resource "yandex_compute_instance" "zabbix" {
   name     = "zabbix"
   hostname = "zabbix-server"
   zone     = "ru-central1-a"
-
+  
+  
   resources {
     cores         = 2
     core_fraction = 20
@@ -154,9 +156,10 @@ resource "yandex_compute_instance" "elastic" {
   name     = "elastic"
   hostname = "elastic-server"
   zone     = "ru-central1-b"
+  allow_stopping_for_update = true
 
   resources {
-    cores         = 4
+    cores         = 2
     memory        = 4
     core_fraction = 20
   }
@@ -194,7 +197,7 @@ resource "yandex_compute_instance" "kibana" {
 
   resources {
     cores         = 2
-    memory        = 4
+    memory        = 2
     core_fraction = 20
   }
 
