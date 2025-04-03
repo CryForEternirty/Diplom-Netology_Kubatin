@@ -110,7 +110,7 @@ Cоздайте ВМ, разверните на ней Elasticsearch. Устан
 4. Настроил индекс логов nginx и вывод в Dicsover:
 ![kibana](image-5.png)
 
-site: http://89.169.154.252:5601/app/home#/
+site: http://158.160.101.122:5601/app/home#/
 
 ### Сеть
 Разверните один VPC. Сервера web, Elasticsearch поместите в приватные подсети. Сервера Zabbix, Kibana, application load balancer определите в публичную подсеть.

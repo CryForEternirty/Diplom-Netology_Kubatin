@@ -29,7 +29,7 @@ resource "yandex_compute_instance" "bastion" {
   }
 
   scheduling_policy {
-    preemptible = true
+    preemptible = false
   }
 
   network_interface {
@@ -59,7 +59,11 @@ resource "yandex_compute_instance" "nginx-1" {
       size     = 10
     }
   }
-
+  
+  scheduling_policy {
+    preemptible = false
+  }
+  
   network_interface {
     subnet_id           = yandex_vpc_subnet.private-subnet-web1.id
     ip_address         = "192.168.20.10"
@@ -92,6 +96,10 @@ resource "yandex_compute_instance" "nginx-2" {
       size     = 10
     }
   }
+  
+  scheduling_policy {
+    preemptible = false
+  }
 
   network_interface {
     subnet_id           = yandex_vpc_subnet.private-subnet-web2.id
@@ -123,6 +131,9 @@ resource "yandex_compute_instance" "zabbix" {
       type     = "network-hdd"
       size     = 10
     }
+  }
+  scheduling_policy {
+    preemptible = false
   }
 
   network_interface {
@@ -157,6 +168,10 @@ resource "yandex_compute_instance" "elastic" {
       size     = 10
     }
   }
+  
+  scheduling_policy {
+    preemptible = false
+  }
 
   network_interface {
     subnet_id = yandex_vpc_subnet.private-subnet-services.id
@@ -175,10 +190,11 @@ resource "yandex_compute_instance" "kibana" {
   name     = "kibana"
   hostname = "kibana-server"
   zone     = "ru-central1-a"
+  allow_stopping_for_update = true
 
   resources {
-    cores         = 4
-    memory        = 6
+    cores         = 2
+    memory        = 4
     core_fraction = 20
   }
 
@@ -189,6 +205,11 @@ resource "yandex_compute_instance" "kibana" {
       size     = 10
     }
   }
+  
+  scheduling_policy {
+    preemptible = false
+  }
+  
 
   network_interface {
     subnet_id = yandex_vpc_subnet.public-subnet-a.id
